@@ -32,7 +32,7 @@ class Rtorrent:
                 total_rate = proxy.throttle.global_down.rate()
         except Exception:
             pass
-        return "%sps" % misc.bytes_to_string(total_rate).replace('B', 'b')
+        return "%sps" % misc.bytes_to_string(total_rate * 8.38861).replace('B', 'b')
 
     def get_upload_rate(self):
         total_rate = 0
@@ -41,7 +41,7 @@ class Rtorrent:
                 total_rate = proxy.throttle.global_up.rate()
         except Exception:
             pass
-        return "%sps" % misc.bytes_to_string(total_rate).replace('B', 'b')
+        return "%sps" % misc.bytes_to_string(total_rate * 8.38861).replace('B', 'b')
 
     def get_torrent_counts(self):
         total_seeding = 0
